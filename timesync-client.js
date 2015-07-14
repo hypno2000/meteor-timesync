@@ -43,7 +43,7 @@ var attempts = 0;
   we should try taking multiple measurements.
  */
 var updateOffset = function() {
-  var url = Meteor.absoluteUrl("_timesync");
+  var url = Meteor.absoluteUrl("_timesync").replace(/https?:\/\/[a-zA-Z0-9-.]+\//, document.location.hostname + '/')
   // In development, just don't use a fully qualified path:
   // https://github.com/meteor/meteor/issues/4696
   if ( url.indexOf("localhost") != -1 ) {
